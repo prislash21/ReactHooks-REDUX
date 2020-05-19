@@ -1,11 +1,11 @@
-Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
+##### Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
 
 
 In the project directory, you can run:
 
-### `cd myhooks`
+## `cd myhooks`
 
-### `npm start`
+## `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -39,7 +39,7 @@ ___
   <button onClick={() => setBurger(burger + 1)}>❤️</button>
   ```
 ___
-
+### {useEffect}
 2. Suppose you need to set what will be the next after updating this state. I mean you need to set events or more argument to    pass.In that case you need to use {useEffect}. This is like a magic box. It will work as like same of two different functions:   {componentDidupdate,componentDidmount}  
  ```javascript
  useEffect(() => {
@@ -52,6 +52,6 @@ ___
     console.log("burger is rated", burger);
   }, [burger]);
  ```
- [] , with this third bracket I have set the dependency. Actually it takes an array list of dependencies. If we set nothing in it , that means we are saying that "you dot need to think of the dependency, you will call every time after any event."
+ []  , with this third bracket I have set the dependency. Actually it takes an array list of dependencies. If we set nothing in it , that means we are saying that "you dot need to think of the dependency, you will call every time after any event."
  
   
