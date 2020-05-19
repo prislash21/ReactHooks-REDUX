@@ -1,7 +1,7 @@
 # Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
 
 
-In the project directory, you can run:
+you can run by:
 
  `cd myhooks`
 
