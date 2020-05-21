@@ -1,57 +1,35 @@
-# Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
 
-
-you can run by:
-
- `cd myhooks`
-
- `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### Here you can see the demo : 
-![Demo](myjunkrating.gif)
- 
-
-
-### {useState}
-
-with this one you can simply set state without a class in this way :
-
-```javascript
-import React, { useState } from "react";
-
-const Myhooks = () => {
-  const [burger, setBurger] = useState(0);
-  const [fries, setFries] = useState(0);
-
-```
+##THINGS HAVE TO KNOW: 
 ___
-1. Here {useState} can take two argument directly:
-  first one is value , and second one is the state which you want to update.
-  so you d'nt need to have a class to update a state or setState or this.setState or any lengthy code to set it.
-  you can also set it within a button to set which will be the next updated state by clicking. 
-  ```javascript
-  <button onClick={() => setBurger(burger + 1)}>❤️</button>
-  ```
+
+#### 1. Redux actually is for state management (kind of store management) it will deal with your huge complex data system. IT will separete your data as a simple way but in a one store. and this separation willbe done with REDUCER. 
 ___
-### {useEffect}
-2. Suppose you need to set what will be the next after updating this state. I mean you need to set events or more argument to    pass.In that case you need to use {useEffect}. This is like a magic box. It will work as like same of two different functions:   {componentDidupdate,componentDidmount}  
- ```javascript
- useEffect(() => {
-    console.log("burger is rated", burger);
-  });
- ```
- Now , It will call after any state as their , I d'nt set the dependencies there.. If I want that ,It will call when only the burger will rate. In that case I have to set the dependency their like: 
- ```javascript
- useEffect(() => {
-    console.log("burger is rated", burger);
-  }, [burger]);
- ```
- []  , with this third bracket I have set the dependency. Actually it takes an array list of dependencies. If we set nothing in it , that means we are saying that "you dot need to think of the dependency, you will call every time after any event."
- 
-  
+#### 2. REDUCER is a function that returns a specific portion of data or a state. That means it will work for the separation and the Distribution of your data. Simply it will reduce your data complexity thats why it is called REDUCER.
+___
+#### 3. Without a Reducer You can not create a state. That means it plays a vital role in redux.
+___
+#### 4. In Redux , Every single events is called ACTION. Pressing buttons , and event triggering, browser loading , giving inputs, etc each and every single live or dead events is ACTION in Redux. When an Action is occured , Reducer dispatch some  exact amount of data for helping the Action to be an Action.
+___
+#### 5. When an ACTION will occur , maybe some data will create , update or whatever .. then those data will call 
+___
+#### 6. As an example: We see videos in youtube from different channels. If we want to get updated about their videos what we do ? We do SUBSCRIBE , so that we dont need to search for the channel anymore, when there will be any further update on those channels then we will be informed automatically right ? This concept is almost same in REDUX. when parent component will update then subscriber child component will also update automatically as they subscribe to the parent component.
+___
+#### 7. STORE IS AN OBJECT.
+___
+#### PURE FUNCTION : It will take only input and do something what is defined to do in a function body. That means :
+A pure function is a function which:
+Given the same input, will always return the same output.
+Produces no side effects.
+
+Pure functions are also extremely independent — easy to move around, refactor, and reorganize in your code, making your programs more flexible and adaptable to future changes.
+
+#### 10. You have to create a REDUCER first in order to create a store.
+___
+#### 11. Before Creating a REDUCER you have to create a ACTION first.
+___
+#### 12. REDUX makes data flow transparent and predictable. It can answer (why,when,how,where?) of the data change.
+___
+
+
+
+   
