@@ -1,10 +1,11 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
 
-## Available Scripts
 
-In the project directory, you can run:
+you can run by:
 
-### `npm start`
+ `cd myhooks`
+
+ `npm start`
 
 Runs the app in the development mode.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
@@ -12,57 +13,45 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
-### `npm test`
+### Here you can see the demo : 
+![Demo](myjunkrating.gif)
+ 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### {useState}
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+with this one you can simply set state without a class in this way :
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```javascript
+import React, { useState } from "react";
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+const Myhooks = () => {
+  const [burger, setBurger] = useState(0);
+  const [fries, setFries] = useState(0);
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+```
+___
+1. Here {useState} can take two argument directly:
+  first one is value , and second one is the state which you want to update.
+  so you d'nt need to have a class to update a state or setState or this.setState or any lengthy code to set it.
+  you can also set it within a button to set which will be the next updated state by clicking. 
+  ```javascript
+  <button onClick={() => setBurger(burger + 1)}>❤️</button>
+  ```
+___
+### {useEffect}
+2. Suppose you need to set what will be the next after updating this state. I mean you need to set events or more argument to    pass.In that case you need to use {useEffect}. This is like a magic box. It will work as like same of two different functions:   {componentDidupdate,componentDidmount}  
+ ```javascript
+ useEffect(() => {
+    console.log("burger is rated", burger);
+  });
+ ```
+ Now , It will call after any state as their , I d'nt set the dependencies there.. If I want that ,It will call when only the burger will rate. In that case I have to set the dependency their like: 
+ ```javascript
+ useEffect(() => {
+    console.log("burger is rated", burger);
+  }, [burger]);
+ ```
+ []  , with this third bracket I have set the dependency. Actually it takes an array list of dependencies. If we set nothing in it , that means we are saying that "you dot need to think of the dependency, you will call every time after any event."
+ 
+  
