@@ -25,9 +25,7 @@ Pure functions are also extremely independent — easy to move around, refactor,
 
 #### 10. You have to create a REDUCER first in order to create a store.
 ___
-#### 11. Before Creating a REDUCER you have to create a ACTION first.
-___
-#### 12. REDUX makes data flow transparent and predictable. It can answer (why,when,how,where?) of the data change.
+#### 11. REDUX makes data flow transparent and predictable. It can answer (why,when,how,where?) of the data change.
 ___
 
 
