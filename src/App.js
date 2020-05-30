@@ -1,24 +1,25 @@
-import React, { Component } from "react";
-import store from "./store";
+import React from 'react';
 
+import './styles.css';
 
-import { Provider } from "react-redux";
-import Count from "./components/Count";
-import Control from "./components/Control";
-import { Container } from "reactstrap";
+import UseState from './components/UseState';
+import UseStateTwo from './components/UseStateTwo';
+import UseStateThree from './components/UseStateThree';
+import UseStateFour from './components/UseStateFour';
+import UseEffect from './components/UseEffect';
+import UseEffectMouse from './components/UseEffectMouse';
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <div>
-          <Container > <h1>Rate my Broccoli !!</h1>
-          <Count />
-          <Control />
-          </Container>
-        </div>
-      </Provider>
-    );
-  }
+function App() {
+  return (
+    <div className='App'>
+      <UseState />
+      <UseStateTwo />
+      <UseStateThree />
+      <UseStateFour />
+      <UseEffect />
+      <UseEffectMouse />
+    </div>
+  );
 }
+
 export default App;

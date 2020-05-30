@@ -1,57 +1,17 @@
-# Here I Use ReactHooks from Basic Hooks(useState, useEffect,useContext)
+# useState():
+
+1. This function accepts arguments which is the current state , which will return as a state and a method that capable of updating the state as well.
+
+---
+
+2. useState doesnt automatically merge and update the object, Have to manually merge the value (can be spread oparator).
+
+---
+
+3. In a class component , state is always an object, but with this hook , the state doesn't have to be an object. It can be array, number , bla bla bla ...
+
+4. It returns an array with two element . one is the current value of the state , and the second one is a state setter function. new state value depends on previous state value , you can pass a function to a setter function.
+
+5. when dealing with objects and arrays , make sure you always spread your state variable and then call the setter function.
 
 
-you can run by:
-
- `cd myhooks`
-
- `npm start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### Here you can see the demo : 
-![Demo](myjunkrating.gif)
- 
-
-
-### {useState}
-
-with this one you can simply set state without a class in this way :
-
-```javascript
-import React, { useState } from "react";
-
-const Myhooks = () => {
-  const [burger, setBurger] = useState(0);
-  const [fries, setFries] = useState(0);
-
-```
-___
-1. Here {useState} can take two argument directly:
-  first one is value , and second one is the state which you want to update.
-  so you d'nt need to have a class to update a state or setState or this.setState or any lengthy code to set it.
-  you can also set it within a button to set which will be the next updated state by clicking. 
-  ```javascript
-  <button onClick={() => setBurger(burger + 1)}>❤️</button>
-  ```
-___
-### {useEffect}
-2. Suppose you need to set what will be the next after updating this state. I mean you need to set events or more argument to    pass.In that case you need to use {useEffect}. This is like a magic box. It will work as like same of two different functions:   {componentDidupdate,componentDidmount}  
- ```javascript
- useEffect(() => {
-    console.log("burger is rated", burger);
-  });
- ```
- Now , It will call after any state as their , I d'nt set the dependencies there.. If I want that ,It will call when only the burger will rate. In that case I have to set the dependency their like: 
- ```javascript
- useEffect(() => {
-    console.log("burger is rated", burger);
-  }, [burger]);
- ```
- []  , with this third bracket I have set the dependency. Actually it takes an array list of dependencies. If we set nothing in it , that means we are saying that "you dot need to think of the dependency, you will call every time after any event."
- 
-  

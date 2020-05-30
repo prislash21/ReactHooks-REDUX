@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+.mybutton {
+  color: green;
+  position: relative;
+}
+
+
+.myresetbutton {
+  color: blueviolet;
+}
+
+.myincreasebutton {
+  color: chartreuse;
+}
+
+.mydecreasebutton {
+  color: red;
+}
+
+.myinputone {
+  text-decoration: underline;
+  color: brown;
+}
+
+.myinputwo {
+  text-transform: capitalize;
+  color: crimson;
+}
